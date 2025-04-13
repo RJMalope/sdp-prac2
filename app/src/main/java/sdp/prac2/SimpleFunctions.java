@@ -5,6 +5,18 @@ import java.util.*;
 public class SimpleFunctions {
     public SimpleFunctions() {}
 
+    public static List<String> Task2(List<String> inputList) {
+        List<String> result = new ArrayList<>();
+
+        for (String item : inputList) {
+            if (item != null && item.length() > 1) {
+                result.add(item.substring(1)); 
+            }
+        }
+
+        return result;
+    }
+
     public List<Integer> Task4(List<Integer> a, List<Integer> b) {
         if (a.size() != b.size()) {
             return null;
