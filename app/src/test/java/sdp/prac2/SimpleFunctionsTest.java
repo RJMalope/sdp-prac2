@@ -5,8 +5,9 @@ package sdp.prac2;
 
 import static org.junit.jupiter.api.Assertions.*;
 import org.junit.jupiter.api.Test;
+import java.util.*;
 
-public class SimpleFunctionsTest {
+class SimpleFunctionsTest {
 
     @Test
     public void testTask3_balancedAndNestedBrackets_returnsTrue() {
@@ -23,4 +24,29 @@ public class SimpleFunctionsTest {
 
         assertFalse(result);
     }
+
+    @Test void Task5ChecksIfListIsSorted() {
+        //Arrange
+        SimpleFunctions classBeingTested = new SimpleFunctions();
+        List<Object> lst1 = Arrays.asList();
+        List<Object> lst2 = Arrays.asList(0,0,7);
+        List<Object> lst3 = Arrays.asList(3,1,3);
+        List<Object> lst4 = Arrays.asList("a", "b", "c");
+        List<Object> lst5 = Arrays.asList("z","y","x");
+
+        //Act
+        boolean res1 = classBeingTested.Task5(lst1);
+        boolean res2 = classBeingTested.Task5(lst2);
+        boolean res3 = classBeingTested.Task5(lst3);
+        boolean res4 = classBeingTested.Task5(lst4);
+        boolean res5 = classBeingTested.Task5(lst5);
+
+        //Assert
+        assertEquals(true, res1);
+        assertEquals(true, res2);
+        assertEquals(false, res3);
+        assertEquals(true, res4);
+        assertEquals(false, res5);
+    }
+
 }
