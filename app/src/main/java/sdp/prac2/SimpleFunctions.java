@@ -15,6 +15,18 @@ public class SimpleFunctions {
         }
 
         return result;
+    } 
+    // G22M3544 - Task One 
+    //accepts two lists of ints and returns the sum of index's listed in B
+    public int Adder(List<Integer> a, List<Integer> b){
+        int ans = 0; 
+        for (int cnt = 0; cnt < b.size(); cnt ++){
+            int id = b.get(cnt); 
+            if (id > 0 && id <= a.size()){
+                ans += a.get(id);
+            } 
+        } 
+        return ans
     }
 
     public boolean Task3(String str){
