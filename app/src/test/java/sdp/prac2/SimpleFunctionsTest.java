@@ -24,6 +24,28 @@ class SimpleFunctionsTest {
 
         assertFalse(result);
     }
+    
+    @Test 
+    public void testTask4_DifferentSizeLists() {
+        List<Integer> x = Arrays.asList(1,2,3);
+        List<Integer> y = Arrays.asList(4,5);
+        
+        List<Integer> answer = SimpleFunctions.Task4(x,y);
+        
+        assertNull(answer);
+    }
+
+    @Test 
+    public void testTask4_BasicFunctionality() {
+        List<Integer> x = Arrays.asList(1,2,3);
+        List<Integer> y = Arrays.asList(4,5,6);
+        List<Integer> expected = Arrays.asList(6,10,12);
+        
+        List<Integer> answer = SimpleFunctions.Task4(x,y);
+        
+        assertEquals(expected,answer);
+    }
+
 
     // @Test void Task5ChecksIfListIsSorted() {
     //     //Arrange
