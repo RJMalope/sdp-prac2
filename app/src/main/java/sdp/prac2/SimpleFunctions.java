@@ -1,6 +1,6 @@
 package sdp.prac2;
 
-giimport java.util.*;
+import java.util.*;
 
 public class SimpleFunctions {
     public SimpleFunctions() {}
@@ -17,7 +17,7 @@ public class SimpleFunctions {
         return result;
     }
 
-    public boolean Task3(String str){
+    public static boolean Task3(String str){
         int BracketCount = 0;
         for (char ch : str.toCharArray()){
             if (ch == '('){
@@ -48,6 +48,22 @@ public class SimpleFunctions {
         }
         
         return result;
+    }
+
+    /* nums: List of numbers to convert to multples of 100
+     * returns list of multiples of 100*/
+    public static List<Integer> Task6 (List<Integer> nums){
+        // initialze list to store result
+        List<Integer> output = new ArrayList<>();
+        // iterate through given list
+        for (int num: nums){
+            // check if number is a multiple of 100
+            if (num%100 == 0) output.add(num);
+            // get integer division value multiplied by 100, and add 100 to round up to the next multiple
+            else output.add((num/100)*100 + 100);
+        }
+        // return result
+        return output;
     }
     
 }
