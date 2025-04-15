@@ -1,6 +1,6 @@
 package sdp.prac2;
 
-import java.util.*;
+giimport java.util.*;
 
 public class SimpleFunctions {
     public SimpleFunctions() {}
@@ -15,6 +15,23 @@ public class SimpleFunctions {
         }
 
         return result;
+    }
+
+    public boolean Task3(String str){
+        int BracketCount = 0;
+        for (char ch : str.toCharArray()){
+            if (ch == '('){
+                BracketCount++;
+            }
+            else if(ch == ')'){
+                BracketCount--;
+
+                if (BracketCount < 0){
+                    return false;
+                }
+            }
+        }
+        return BracketCount == 0;
     }
 
     public List<Integer> Task4(List<Integer> a, List<Integer> b) {
