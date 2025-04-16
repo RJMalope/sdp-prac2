@@ -24,7 +24,7 @@ class SimpleFunctionsTest {
 
         assertFalse(result);
     }
-
+    
     @Test void Task5ChecksIfListIsSorted() {
         //Arrange
         SimpleFunctions classBeingTested = new SimpleFunctions();
