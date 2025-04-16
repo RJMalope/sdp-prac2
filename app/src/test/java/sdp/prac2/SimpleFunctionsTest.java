@@ -7,7 +7,28 @@ import static org.junit.jupiter.api.Assertions.*;
 import org.junit.jupiter.api.Test;
 import java.util.*;
 
-class SimpleFunctionsTest {
+class SimpleFunctionsTest { 
+
+    @Test 
+    public void testTask2(){
+        // Arrange 
+        List<String> input1 = Arrays.asList("Testing", "one", "two"); 
+        List<String> output1 = Arrays.asList("esting", "ne", "wo"); 
+        List<String> input2 = Arrays.asList("No", "character", "", "case"); 
+        List<String> output2 = Arrays.asList("o", "haracter", "ase"); 
+        List<String> intput3 = Arrays.asList("The", "case", "for", "spaces...", "   "); 
+        List<String> output3 = Arrays.asList("he", "ase", "or", "paces", "  "); 
+
+        // Act 
+        List<String> runner1 = SimpleFunctions.Task2(input1); 
+        List<String> runner2 = SimpleFunctions.Task2(input2); 
+        List<String> runner3 = SimpleFunctions.Task2(input3); 
+
+        // Assertion 
+        assertEquals(runner1,output1); 
+        assertEquals(runner2, output2); 
+        assertEquals(runner3, output3);
+    } 
 
     @Test
     public static void testTask3_NestedBrackets() {
