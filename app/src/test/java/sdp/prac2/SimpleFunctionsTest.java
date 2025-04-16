@@ -9,20 +9,35 @@ import java.util.*;
 
 class SimpleFunctionsTest {
 
+    @Test 
+    public void testTask2(){
+        // Arrange 
+        List<String> input1 = Arrays.asList("Testing", "one", "two"); 
+        List<String> output1 = Arrays.asList("esting", "ne", "wo"); 
+        List<String> input2 = Arrays.asList("No", "character", "", "case"); 
+        List<String> output2 = Arrays.asList("o", "haracter", "ase"); 
+        List<String> input3 = Arrays.asList("The", "case", "for", "spaces...", "   "); 
+        List<String> output3 = Arrays.asList("he", "ase", "or", "paces", "  "); 
+
+        // Act 
+        List<String> runner1 = SimpleFunctions.Task2(input1); 
+        List<String> runner2 = SimpleFunctions.Task2(input2); 
+        List<String> runner3 = SimpleFunctions.Task2(input3); 
+
+        // Assertion 
+        assertEquals(runner1,output1); 
+        assertEquals(runner2, output2); 
+        assertEquals(runner3, output3);
+    } 
+
     @Test
-    public void testTask3_balancedAndNestedBrackets_returnsTrue() {
+    public static void testTask3_NestedBrackets() {
         String input = "(())";
         boolean result = SimpleFunctions.Task3(input);
         assertTrue(result);
-    }
-
-    @Test
-    public void testTask3_unbalancedBrackets_returnsFalse() {
-        String input = "(()";
-        
-        boolean result = SimpleFunctions.Task3(input);
-
-        assertFalse(result);
+        String input1 = "(()";
+        boolean result1 = SimpleFunctions.Task3(input1);
+        assertFalse(result1);
     }
     
     @Test 
@@ -47,14 +62,12 @@ class SimpleFunctionsTest {
     }
 
 
-    @Test void Task5ChecksIfListIsSorted() {
-        //Arrange
-        SimpleFunctions classBeingTested = new SimpleFunctions();
-        List<Object> lst1 = Arrays.asList();
-        List<Object> lst2 = Arrays.asList(0,0,7);
-        List<Object> lst3 = Arrays.asList(3,1,3);
-        List<Object> lst4 = Arrays.asList("a", "b", "c");
-        List<Object> lst5 = Arrays.asList("z","y","x");
+   //Tests for Task5
+   @Test void isEmptyListConsideredSorted() {
+        List<Integer> input = Collections.emptyList();
+        boolean result = SimpleFunctions.Task5(input);
+        assertTrue(result);
+    }
 
         //Act
         // boolean res1 = classBeingTested.Task5(lst1);
@@ -69,6 +82,18 @@ class SimpleFunctionsTest {
         // assertEquals(false, res3);
         // assertEquals(true, res4);
         // assertEquals(false, res5);
+
+    @Test void sortedNumbersListReturnsTrue() {
+        List<Integer> input = Arrays.asList(0, 0, 7);
+        boolean result = SimpleFunctions.Task5(input);
+        assertTrue(result);
+    }
+
+    @Test void unsortedListReturnsFalse() {
+        List<Integer> input = Arrays.asList(3, 1, 3);
+        boolean result = SimpleFunctions.Task5(input);
+        assertFalse(result);
+
     }
 
     @Test void TestTask1(){
@@ -105,13 +130,13 @@ class SimpleFunctionsTest {
             }
         }
 
-        // //Act
-        // int res1 = classBeingTested.Task1(nums1, idx1);
-        // int res2 = classBeingTested.Task1(nums2, idx2);
+        //Act
+        int res1 = classBeingTested.Task1(nums1, idx1);
+        int res2 = classBeingTested.Task1(nums2, idx2);
 
-        // // Assert
-        // assertEquals(sum1,res1);
-        // assertEquals(sum2,res2);
+        // Assert
+        assertEquals(sum1,res1);
+        assertEquals(sum2,res2);
         
     }
 

@@ -3,7 +3,19 @@ package sdp.prac2;
 import java.util.*;
 
 public class SimpleFunctions {
-    public SimpleFunctions() {}
+    public SimpleFunctions() {} 
+
+    public int Task1(List<Integer> a, List<Integer> b){
+        int ans = 0;
+        for(int cnt = 0; cnt < b.size(); cnt ++){
+            int id = b.get(cnt); 
+            if (id > 0 && id <= a.size()){
+                ans += a.get(id);
+            }
+        } 
+        return ans;
+    }
+
 
     public static List<String> Task2(List<String> inputList) {
         List<String> result = new ArrayList<>();
@@ -55,22 +67,6 @@ public class SimpleFunctions {
         return result;
     }
 
-    /* nums: List of numbers to convert to multples of 100
-     * returns list of multiples of 100*/
-    public static List<Integer> Task6 (List<Integer> nums){
-        // initialze list to store result
-        List<Integer> output = new ArrayList<>();
-        // iterate through given list
-        for (int num: nums){
-            // check if number is a multiple of 100
-            if (num%100 == 0) output.add(num);
-            // get integer division value multiplied by 100, and add 100 to round up to the next multiple
-            else output.add((num/100)*100 + 100);
-        }
-        // return result
-        return output;
-    }
-    
     //g22m9049 task 5
     public static boolean Task5(List<Integer> list) {
         // An empty list or a list with one element is trivially sorted
@@ -88,6 +84,23 @@ public class SimpleFunctions {
         return true;
     }
 
+
+    /* nums: List of numbers to convert to multples of 100
+     * returns list of multiples of 100*/
+    public static List<Integer> Task6 (List<Integer> nums){
+        // initialze list to store result
+        List<Integer> output = new ArrayList<>();
+        // iterate through given list
+        for (int num: nums){
+            // check if number is a multiple of 100
+            if (num%100 == 0) output.add(num);
+            // get integer division value multiplied by 100, and add 100 to round up to the next multiple
+            else output.add((num/100)*100 + 100);
+        }
+        // return result
+        return output;
+    }
+    
 }
 
     
