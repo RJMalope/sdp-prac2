@@ -50,5 +50,23 @@ public class SimpleFunctions {
         
         return result;
     }
-    
+
+    //g22m9049 task 5
+    public static boolean Task5(List<Integer> list) {
+        // An empty list or a list with one element is trivially sorted
+        if (list == null || list.size() <= 1) {
+            return true;
+        }
+
+        // Check each adjacent pair
+        for (int i = 0; i < list.size() - 1; i++) {
+            if (list.get(i) > list.get(i + 1)) {
+                return false;
+            }
+        }
+
+        return true;
+    }
 }
+
+    
