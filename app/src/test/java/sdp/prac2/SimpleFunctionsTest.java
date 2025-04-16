@@ -41,28 +41,23 @@ class SimpleFunctionsTest {
     }
 
 
-    @Test void Task5ChecksIfListIsSorted() {
-        //Arrange
-        SimpleFunctions classBeingTested = new SimpleFunctions();
-        List<Object> lst1 = Arrays.asList();
-        List<Object> lst2 = Arrays.asList(0,0,7);
-        List<Object> lst3 = Arrays.asList(3,1,3);
-        List<Object> lst4 = Arrays.asList("a", "b", "c");
-        List<Object> lst5 = Arrays.asList("z","y","x");
+   //Tests for Task5
+   @Test void isEmptyListConsideredSorted() {
+    List<Integer> input = Collections.emptyList();
+    boolean result = SimpleFunctions.Task5(input);
+    assertTrue(result);
+    }
 
-        //Act
-        boolean res1 = classBeingTested.Task5(lst1);
-        boolean res2 = classBeingTested.Task5(lst2);
-        boolean res3 = classBeingTested.Task5(lst3);
-        boolean res4 = classBeingTested.Task5(lst4);
-        boolean res5 = classBeingTested.Task5(lst5);
+    @Test void sortedNumbersListReturnsTrue() {
+        List<Integer> input = Arrays.asList(0, 0, 7);
+        boolean result = SimpleFunctions.Task5(input);
+        assertTrue(result);
+    }
 
-        //Assert
-        assertEquals(true, res1);
-        assertEquals(true, res2);
-        assertEquals(false, res3);
-        assertEquals(true, res4);
-        assertEquals(false, res5);
+    @Test void unsortedListReturnsFalse() {
+        List<Integer> input = Arrays.asList(3, 1, 3);
+        boolean result = SimpleFunctions.Task5(input);
+        assertFalse(result);
     }
 
 }

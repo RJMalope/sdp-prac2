@@ -35,7 +35,7 @@ public class SimpleFunctions {
         return bracketCount == 0;
     }
 
-    public List<Integer> Task4(List<Integer> a, List<Integer> b) {
+    public static List<Integer> Task4(List<Integer> a, List<Integer> b) {
         if (a.size() != b.size()) {
             return null;
         }
