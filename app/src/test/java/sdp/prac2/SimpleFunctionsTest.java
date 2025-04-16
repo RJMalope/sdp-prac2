@@ -10,19 +10,13 @@ import java.util.*;
 class SimpleFunctionsTest {
 
     @Test
-    public void testTask3_balancedAndNestedBrackets_returnsTrue() {
+    public static void testTask3_NestedBrackets() {
         String input = "(())";
         boolean result = SimpleFunctions.Task3(input);
         assertTrue(result);
-    }
-
-    @Test
-    public void testTask3_unbalancedBrackets_returnsFalse() {
-        String input = "(()";
-        
-        boolean result = SimpleFunctions.Task3(input);
-
-        assertFalse(result);
+        String input1 = "(()";
+        boolean result1 = SimpleFunctions.Task3(input1);
+        assertFalse(result1);
     }
     
     @Test 
