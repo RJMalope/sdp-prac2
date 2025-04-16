@@ -47,28 +47,73 @@ class SimpleFunctionsTest {
     }
 
 
-    // @Test void Task5ChecksIfListIsSorted() {
-    //     //Arrange
-    //     SimpleFunctions classBeingTested = new SimpleFunctions();
-    //     List<Object> lst1 = Arrays.asList();
-    //     List<Object> lst2 = Arrays.asList(0,0,7);
-    //     List<Object> lst3 = Arrays.asList(3,1,3);
-    //     List<Object> lst4 = Arrays.asList("a", "b", "c");
-    //     List<Object> lst5 = Arrays.asList("z","y","x");
+    @Test void Task5ChecksIfListIsSorted() {
+        //Arrange
+        SimpleFunctions classBeingTested = new SimpleFunctions();
+        List<Object> lst1 = Arrays.asList();
+        List<Object> lst2 = Arrays.asList(0,0,7);
+        List<Object> lst3 = Arrays.asList(3,1,3);
+        List<Object> lst4 = Arrays.asList("a", "b", "c");
+        List<Object> lst5 = Arrays.asList("z","y","x");
 
-    //     //Act
-    //     boolean res1 = classBeingTested.Task5(lst1);
-    //     boolean res2 = classBeingTested.Task5(lst2);
-    //     boolean res3 = classBeingTested.Task5(lst3);
-    //     boolean res4 = classBeingTested.Task5(lst4);
-    //     boolean res5 = classBeingTested.Task5(lst5);
+        //Act
+        // boolean res1 = classBeingTested.Task5(lst1);
+        // boolean res2 = classBeingTested.Task5(lst2);
+        // boolean res3 = classBeingTested.Task5(lst3);
+        // boolean res4 = classBeingTested.Task5(lst4);
+        // boolean res5 = classBeingTested.Task5(lst5);
 
-    //     //Assert
-    //     assertEquals(true, res1);
-    //     assertEquals(true, res2);
-    //     assertEquals(false, res3);
-    //     assertEquals(true, res4);
-    //     assertEquals(false, res5);
-    // }
+        // //Assert
+        // assertEquals(true, res1);
+        // assertEquals(true, res2);
+        // assertEquals(false, res3);
+        // assertEquals(true, res4);
+        // assertEquals(false, res5);
+    }
+
+    @Test void TestTask1(){
+        // Arrange
+        SimpleFunctions classBeingTested = new SimpleFunctions();
+        Random r = new Random();
+        List<Integer> nums1  = new ArrayList<>();
+        for (int i = 0; i<10;i++){
+            nums1.add(r.nextInt(50));
+        }
+        List<Integer> idx1  = new ArrayList<>();
+        for (int i = 0; i<10;i++){
+            idx1.add(r.nextInt(15));
+        }
+        List<Integer> nums2  = new ArrayList<>();
+        for (int i = 0; i<10;i++){
+            nums2.add(r.nextInt(50));
+        }
+        List<Integer> idx2  = new ArrayList<>();
+        for (int i = 0; i<10;i++){
+            idx2.add(r.nextInt(15));
+        }
+        int sum1 = 0;
+        int sum2 = 0;
+        for (int n: idx1){
+            if (n<nums1.size()){
+                sum1 += nums1.get(n);
+            }
+        }
+
+        for (int n: idx2){
+            if (n<nums2.size()){
+                sum2 += nums2.get(n);
+            }
+        }
+
+        // //Act
+        // int res1 = classBeingTested.Task1(nums1, idx1);
+        // int res2 = classBeingTested.Task1(nums2, idx2);
+
+        // // Assert
+        // assertEquals(sum1,res1);
+        // assertEquals(sum2,res2);
+        
+    }
+
 
 }

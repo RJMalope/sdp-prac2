@@ -18,20 +18,25 @@ public class SimpleFunctions {
     }
 
     public static boolean Task3(String str){
+
         int BracketCount = 0;
+
+        if (str == null) return false;
+        int bracketCount = 0;
+
         for (char ch : str.toCharArray()){
             if (ch == '('){
-                BracketCount++;
+                bracketCount++;
             }
             else if(ch == ')'){
-                BracketCount--;
+                bracketCount--;
 
-                if (BracketCount < 0){
+                if (bracketCount < 0){
                     return false;
                 }
             }
         }
-        return BracketCount == 0;
+        return bracketCount == 0;
     }
 
     public static List<Integer> Task4(List<Integer> a, List<Integer> b) {
@@ -66,4 +71,23 @@ public class SimpleFunctions {
         return output;
     }
     
+    //g22m9049 task 5
+    public static boolean Task5(List<Integer> list) {
+        // An empty list or a list with one element is trivially sorted
+        if (list == null || list.size() <= 1) {
+            return true;
+        }
+
+        // Check each adjacent pair
+        for (int i = 0; i < list.size() - 1; i++) {
+            if (list.get(i) > list.get(i + 1)) {
+                return false;
+            }
+        }
+
+        return true;
+    }
+
 }
+
+    
