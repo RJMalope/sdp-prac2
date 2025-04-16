@@ -3,7 +3,19 @@ package sdp.prac2;
 import java.util.*;
 
 public class SimpleFunctions {
-    public SimpleFunctions() {}
+    public SimpleFunctions() {} 
+
+    public int Task1(List<Integer> a, List<Integer> b){
+        int ans = 0 
+        for(int cnt = 0, cnt < b.size(), cnt ++){
+            int id = b.get(cnt) 
+            if (id > 0 && id <= a.size()){
+                ans += a.get(id)
+            }
+        } 
+        return ans
+    }
+
 
     public static List<String> Task2(List<String> inputList) {
         List<String> result = new ArrayList<>();
@@ -15,17 +27,6 @@ public class SimpleFunctions {
         }
 
         return result;
-    }  
-    //G22M3544
-    public int Task1(List<Integer> a, List<Integer> b){
-        int ans = 0; 
-        for (int cnt = 0; cnt < b.size(); cnt++){
-            int id = b.get(cnt);
-            if (id > 0 && id < a.size()){
-                ans += a.get(id);
-            }
-        } 
-        return ans;
     }
 
     public static boolean Task3(String str){
